@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToastGame : MonoBehaviour, IGameManager
+public class ToastManager : MonoBehaviour, IGameManager
 {
     [SerializeField] GameObject toast;
     public Transform startPoint;   // Punto de inicio
@@ -26,7 +26,7 @@ public class ToastGame : MonoBehaviour, IGameManager
     private bool _startGame = false;
     [Header("Dialogos")]
     public DialogManager DialogManager;
-    string starName = "Star";
+    const string STAR_NAME = "Star";
 
     void Start()
     {
@@ -45,7 +45,7 @@ public class ToastGame : MonoBehaviour, IGameManager
         {
             if(rb.velocity.magnitude < stillThreshold)
             {
-                LoseGame();
+                LoseGame(0);
             }
         }
 
@@ -63,13 +63,14 @@ public class ToastGame : MonoBehaviour, IGameManager
         //rb.velocity = CalculateReleaseVelocity(); // Mantener la inercia en el momento de la liberación
     }
 
-    public void LoseGame()
+    public void LoseGame(int loseId)
     {
+        if(_startGame == false) return;
         _startGame = false;
         List<DialogData> dialogs = new List<DialogData>()
         {
-            new DialogData("/emote:Enojado/¡¡QUE!! ¡No podes! ¡El dia perfecto ahora esta lleno de bacterias!", starName),
-            new DialogData("/emote:MuyEnojado/¿¡Que tan dificil es poner un pan en una tostadora!?", starName, ()=>SceneManager.LoadScene("SampleScene")),
+            new DialogData("/emote:Enojado/¡¡QUE!! ¡No podes! ¡El dia perfecto ahora esta lleno de bacterias!", STAR_NAME),
+            new DialogData("/emote:MuyEnojado/¿¡Que tan dificil es poner un pan en una tostadora!?", STAR_NAME, ()=>SceneManager.LoadScene("SampleScene")),
         };
         DialogManager.Show(dialogs);
     }
@@ -85,9 +86,9 @@ public class ToastGame : MonoBehaviour, IGameManager
             rb.MovePosition(endPoint.position);
             List<DialogData> dialogs = new List<DialogData>()
             {
-                new DialogData("/emote:Sorprendido/¿Lo lograste?", starName),
-                new DialogData("/emote:Sarcastico/Si, lo lograste, supongo, ningun desafio para tus pulgares opuestos supongo.", starName),
-                new DialogData("/emote:Saludo/¡Continuemos con tus flipantes aventuras!", starName,  ()=>SceneManager.LoadScene("SampleScene"))
+                new DialogData("/emote:Sorprendido/¿Lo lograste?", STAR_NAME),
+                new DialogData("/emote:Sarcastico/Si, lo lograste, supongo, ningun desafio para tus pulgares opuestos supongo.", STAR_NAME),
+                new DialogData("/emote:Saludo/¡Continuemos con tus flipantes aventuras!", STAR_NAME,  ()=>SceneManager.LoadScene("SampleScene"))
             };
             DialogManager.Show(dialogs);
         }
@@ -119,9 +120,9 @@ public class ToastGame : MonoBehaviour, IGameManager
         }
         List<DialogData> dialogs = new List<DialogData>()
             {
-                new DialogData("/emote:Saludo/Hola! Soy Strellin! Y juntos lograremos que tengas un dia perfecto.", starName),
-                new DialogData("/emote:Normal/El desayuno es la comida mas importante del dia! No la arruines con salmonella", starName),
-                new DialogData("/emote:Feliz/Solo pon el pan dentro de la tostadora! /emote:Frustrado/ No es dificil... ¿Verdad?", starName,  ()=> _startGame = true)
+                new DialogData("/emote:Saludo/Hola! Soy Strellin! Y juntos lograremos que tengas un dia perfecto.", STAR_NAME),
+                new DialogData("/emote:Normal/El desayuno es la comida mas importante del dia! No la arruines con salmonella", STAR_NAME),
+                new DialogData("/emote:Feliz/Solo pon el pan dentro de la tostadora! /emote:Frustrado/ No es dificil... ¿Verdad?", STAR_NAME,  ()=> _startGame = true)
             };
         DialogManager.Show(dialogs);
     }
