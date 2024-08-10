@@ -3768,7 +3768,7 @@ Transform:
   m_GameObject: {fileID: 1017393415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.01, y: -1.24, z: 0}
+  m_LocalPosition: {x: -8.592, y: -1.24, z: 0}
   m_LocalScale: {x: 0.3677374, y: 0.3677374, z: 0.3677374}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3900,7 +3900,7 @@ MonoBehaviour:
   - {fileID: 1415679572}
   - {fileID: 947298155}
   - {fileID: 96414075}
-  speed: 0.35
+  speed: 0.55
   spriteRenderer: {fileID: 1972635550}
 --- !u!1 &1064341361
 GameObject:
