@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class WakeupManager : MonoBehaviour, IGameManager
 {
     const GameType NAME_GAME = GameType.Wakeup;
-
+    public float timeToFinishGame = 20f;
+    public WatchCooldown watchCooldown;
     public string
         NEXT_SCENE = "ToastGame",
         LOSE_SCENE = "WakeupGame"
@@ -109,7 +110,11 @@ public class WakeupManager : MonoBehaviour, IGameManager
         // Inicializar las posiciones actuales como las iniciales
         _currentUpperPosY = _initialUpperPosY;
         _currentLowerPosY = _initialLowerPosY;
-        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.Initial, () => _startGame = true);
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.Initial, () =>
+        {
+            _startGame = true;
+            watchCooldown.SetTimeAndFinishEvent(timeToFinishGame, () => LoseGame(SituationType.SeTerminoElTiempo));
+        });
 
         for (int i = 0; i < neederKeys; i++)
         {
@@ -153,6 +158,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void LoseGame(SituationType type)
     {
+        watchCooldown.StopWatch();
         _startGame = false;
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame, type, () => SceneManager.LoadScene(LOSE_SCENE));
     }
@@ -163,9 +169,11 @@ public class WakeupManager : MonoBehaviour, IGameManager
         upperEyelid.GetComponent<Image>().enabled = false;
         lowerEyelid.GetComponent<Image>().enabled = false;
         Invoke("WinGame",1.5f);
+        watchCooldown.StopWatch();
     }
     public void WinGame()
     {
+        watchCooldown.StopWatch();
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
     }
     private void BlurOut()

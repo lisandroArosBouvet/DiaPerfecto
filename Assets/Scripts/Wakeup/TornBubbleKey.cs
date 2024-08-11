@@ -10,6 +10,7 @@ public class TornBubbleKey : MonoBehaviour
     float _turnSpeed;
     public TMP_Text text;
     public Button button;
+    public Animator animator;
     private void Start()
     {
         _turnSpeed = UnityEngine.Random.Range(-90,90);   
@@ -27,6 +28,7 @@ public class TornBubbleKey : MonoBehaviour
 
     internal void CorrectKey()
     {
-        Destroy(gameObject);
+        button.interactable = false;
+        animator.Play("Pop");
     }
 }

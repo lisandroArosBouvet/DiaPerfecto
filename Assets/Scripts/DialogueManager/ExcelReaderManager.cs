@@ -174,7 +174,8 @@ public enum SituationType
     ChocasteAncianita,
     ChocasteObrero,
     SobreLaMesa,
-    CayoMesa
+    CayoMesa,
+    SeTerminoElTiempo
 }
 
 public class RowDialogue
