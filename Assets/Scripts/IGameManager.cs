@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IGameManager
 {
-    void LoseGame(int loseId);
+    void LoseGame(SituationType type);
     void WinGame();
     void InitalConfiguration();
 

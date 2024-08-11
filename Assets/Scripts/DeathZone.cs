@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    Action<int> evLoseGame;
-    public int loseId = 0;
-    internal void SetLoseGame(Action<int> loseGame)
+    Action<SituationType> evLoseGame;
+    public SituationType loseType = 0;
+    internal void SetLoseGame(Action<SituationType> loseGame)
     {
         evLoseGame = loseGame;
     }
@@ -15,7 +15,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            evLoseGame?.Invoke(loseId);
+            evLoseGame?.Invoke(loseType);
         }
     }
 }

@@ -24,10 +24,7 @@ public class ToastManager : MonoBehaviour, IGameManager
     public int toastToWin = 2;
     private int _toastInMachine = 0;
     private bool _startGame = false;
-    [Header("Dialogos")]
-    public DialogManager DialogManager;
-    const string STAR_NAME = "Star";
-
+    const string NAME_GAME = "Toast";
     void Start()
     {
         InitalConfiguration();
@@ -63,16 +60,11 @@ public class ToastManager : MonoBehaviour, IGameManager
         //rb.velocity = CalculateReleaseVelocity(); // Mantener la inercia en el momento de la liberación
     }
 
-    public void LoseGame(int loseId)
+    public void LoseGame(SituationType loseType)
     {
         if(_startGame == false) return;
         _startGame = false;
-        List<DialogData> dialogs = new List<DialogData>()
-        {
-            new DialogData("/emote:Enojado/¡¡QUE!! ¡No podes! ¡El dia perfecto ahora esta lleno de bacterias!", STAR_NAME),
-            new DialogData("/emote:MuyEnojado/¿¡Que tan dificil es poner un pan en una tostadora!?", STAR_NAME, ()=>SceneManager.LoadScene("SampleScene")),
-        };
-        DialogManager.Show(dialogs);
+        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.LoseGame, () => SceneManager.LoadScene("SampleScene"));
     }
 
     public void WinGame()
@@ -84,13 +76,7 @@ public class ToastManager : MonoBehaviour, IGameManager
         {
             _startGame = false;
             rb.MovePosition(endPoint.position);
-            List<DialogData> dialogs = new List<DialogData>()
-            {
-                new DialogData("/emote:Sorprendido/¿Lo lograste?", STAR_NAME),
-                new DialogData("/emote:Sarcastico/Si, lo lograste, supongo, ningun desafio para tus pulgares opuestos supongo.", STAR_NAME),
-                new DialogData("/emote:Saludo/¡Continuemos con tus flipantes aventuras!", STAR_NAME,  ()=>SceneManager.LoadScene("SampleScene"))
-            };
-            DialogManager.Show(dialogs);
+            ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene("SampleScene"));
         }
         else
             ResetGame();
@@ -118,12 +104,6 @@ public class ToastManager : MonoBehaviour, IGameManager
         {
             graphic.enabled = false;
         }
-        List<DialogData> dialogs = new List<DialogData>()
-            {
-                new DialogData("/emote:Saludo/Hola! Soy Strellin! Y juntos lograremos que tengas un dia perfecto.", STAR_NAME),
-                new DialogData("/emote:Normal/El desayuno es la comida mas importante del dia! No la arruines con salmonella", STAR_NAME),
-                new DialogData("/emote:Feliz/Solo pon el pan dentro de la tostadora! /emote:Frustrado/ No es dificil... ¿Verdad?", STAR_NAME,  ()=> _startGame = true)
-            };
-        DialogManager.Show(dialogs);
+        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME,ConditionType.Initial,()=> _startGame = true);
     }
 }
