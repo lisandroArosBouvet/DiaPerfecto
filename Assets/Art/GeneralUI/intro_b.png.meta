@@ -1,43 +1,10 @@
 fileFormatVersion: 2
-guid: dd091c86a72eed74ead95e5bdd45fc09
+guid: 1475654b5a103e9479c3bd561e9becb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1440441662341522667
-    second: play y tt_0
-  - first:
-      213: 5255631540658575316
-    second: play y tt_1
-  - first:
-      213: 8388861054210845176
-    second: play y tt_2
-  - first:
-      213: -1968759746271659532
-    second: play y tt_3
-  - first:
-      213: 8890539726004903007
-    second: play y tt_4
-  - first:
-      213: -2393256247525112702
-    second: play y tt_5
-  - first:
-      213: -8840686053154270238
-    second: play y tt_6
-  - first:
-      213: -2123045198671833482
-    second: play y tt_7
-  - first:
-      213: -210959976439408100
-    second: play y tt_8
-  - first:
-      213: 4479127856016553264
-    second: play y tt_9
-  - first:
-      213: 2362074672287202643
-    second: play y tt_10
-  - first:
-      213: 7030130981741580263
-    second: play y tt_11
+      213: -6488224913172608580
+    second: intro_b_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,64 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: play y tt_11
+      name: intro_b_0
       rect:
         serializedVersion: 2
-        x: 699
-        y: 402
-        width: 377
-        height: 182
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7efcc2371ea009160800000000000000
-      internalID: 7030130981741580263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: play y tt_0
-      rect:
-        serializedVersion: 2
-        x: 562
-        y: 654
-        width: 547
-        height: 253
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5aae8eba1c396a4f8c4f6c38cd8226a
-      internalID: 457394613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: play y tt_1
-      rect:
-        serializedVersion: 2
-        x: 1202
-        y: 394
-        width: 377
-        height: 182
+        x: 0
+        y: 0
+        width: 1091
+        height: 627
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 94abca079917eda46b3d80bc588a4798
-      internalID: 41984519
+      spriteID: cb9c18b41d135f5a0800000000000000
+      internalID: -6488224913172608580
       vertices: []
       indices: 
       edges: []
@@ -211,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 551684326b242694cbcc86361529ac37
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -219,9 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      play y tt_0: 457394613
-      play y tt_1: 41984519
-      play y tt_12: 1903455244
+      intro_b_0: -6488224913172608580
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
