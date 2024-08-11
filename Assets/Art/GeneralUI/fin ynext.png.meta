@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: ef7bda931085815438be92e72d4f2754
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5357739121599669827
+    second: fin ynext_0
+  - first:
+      213: 2561394208938411236
+    second: fin ynext_1
+  - first:
+      213: -4005615235827927387
+    second: fin ynext_2
+  - first:
+      213: 3890833493298883412
+    second: fin ynext_3
+  - first:
+      213: -3226536652585413739
+    second: fin ynext_4
+  - first:
+      213: -9187200193392598957
+    second: fin ynext_5
+  - first:
+      213: 7741406668879441814
+    second: fin ynext_6
+  - first:
+      213: 5933902902486246708
+    second: fin ynext_7
+  - first:
+      213: 5475577953438168994
+    second: fin ynext_8
+  - first:
+      213: -2639475022986153549
+    second: fin ynext_9
+  - first:
+      213: 550824650215096695
+    second: fin ynext_10
+  - first:
+      213: -5569105152022182673
+    second: fin ynext_11
+  - first:
+      213: -3353986339455952347
+    second: fin ynext_12
+  - first:
+      213: -1486691636925207348
+    second: fin ynext_13
+  - first:
+      213: 5575888952970751271
+    second: fin ynext_14
+  - first:
+      213: 6103629293459429403
+    second: fin ynext_15
+  - first:
+      213: -6583872723477495645
+    second: fin ynext_16
+  - first:
+      213: -2205572323871681285
+    second: fin ynext_17
+  - first:
+      213: 9063570776071649591
+    second: fin ynext_18
+  - first:
+      213: 6261768072472806055
+    second: fin ynext_19
+  - first:
+      213: 3702134300434378982
+    second: fin ynext_20
+  - first:
+      213: -5574604522845374973
+    second: fin ynext_21
+  - first:
+      213: -1373648672110510210
+    second: fin ynext_22
+  - first:
+      213: 7861661297295665733
+    second: fin ynext_23
+  - first:
+      213: -3253770928556835092
+    second: fin ynext_24
+  - first:
+      213: -6975380690007493994
+    second: fin ynext_25
+  - first:
+      213: 5373934827068654474
+    second: fin ynext_26
+  - first:
+      213: 1735329332001713985
+    second: fin ynext_27
+  - first:
+      213: -2618114483206570349
+    second: fin ynext_28
+  - first:
+      213: 4948313080525531341
+    second: fin ynext_29
+  - first:
+      213: -7583202891894269275
+    second: fin ynext_30
+  - first:
+      213: -5797923230611407716
+    second: fin ynext_31
+  - first:
+      213: -2534634350008600301
+    second: fin ynext_32
+  - first:
+      213: 7411064756124957002
+    second: fin ynext_33
+  - first:
+      213: 5066538203915021410
+    second: fin ynext_34
+  - first:
+      213: 8149322441126286659
+    second: fin ynext_35
+  - first:
+      213: 2688140422519255992
+    second: fin ynext_36
+  - first:
+      213: 7743564578590336706
+    second: fin ynext_37
+  - first:
+      213: 368914343478709218
+    second: fin ynext_38
+  - first:
+      213: 2418739347845571813
+    second: fin ynext_39
+  - first:
+      213: -6543603161841155666
+    second: fin ynext_40
+  - first:
+      213: -2589327527665017876
+    second: fin ynext_41
+  - first:
+      213: 1077426006334358011
+    second: fin ynext_42
+  - first:
+      213: 393819837192512944
+    second: fin ynext_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fin ynext_33
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 228
+        width: 313
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49be34512469d660800000000000000
+      internalID: 7411064756124957002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fin ynext_35
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 201
+        width: 377
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345937f4595381170800000000000000
+      internalID: 8149322441126286659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0b5ee38f64cf22542be2132275fd21c5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fin ynext_33: 7411064756124957002
+      fin ynext_35: 8149322441126286659
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

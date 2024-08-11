@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c06386dab19eaa443a773dc4a8974724
+guid: ec1c3d15744508c4a9b457da85b6c8ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2975446818815082692
-    second: Auto1_0
+      213: 4247239094657471006
+    second: Cutscene_ending1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 550
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Auto1_0
+      name: Cutscene_ending1_0
       rect:
         serializedVersion: 2
-        x: 507
-        y: 159
-        width: 972
-        height: 1716
+        x: 56
+        y: 47
+        width: 1803
+        height: 981
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3ff57402e615b6d0800000000000000
-      internalID: -2975446818815082692
+      spriteID: e12d539247931fa30800000000000000
+      internalID: 4247239094657471006
       vertices: []
       indices: 
       edges: []
@@ -136,15 +136,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9e320fd7f22bc3a44ad36e7eda905e22
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Auto1_0: -2975446818815082692
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

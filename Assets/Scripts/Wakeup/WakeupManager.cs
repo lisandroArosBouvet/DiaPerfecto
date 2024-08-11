@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class WakeupManager : MonoBehaviour, IGameManager
 {
     const GameType NAME_GAME = GameType.Wakeup;
+    public SoundFX soundFxManager;
     public float timeToFinishGame = 20f;
     public WatchCooldown watchCooldown;
     public string
@@ -158,6 +159,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void LoseGame(SituationType type)
     {
+        soundFxManager.Fail();
         watchCooldown.StopWatch();
         _startGame = false;
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame, type, () => SceneManager.LoadScene(LOSE_SCENE));
@@ -170,6 +172,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
         lowerEyelid.GetComponent<Image>().enabled = false;
         Invoke("WinGame",1.5f);
         watchCooldown.StopWatch();
+        soundFxManager.Ganaste();
     }
     public void WinGame()
     {

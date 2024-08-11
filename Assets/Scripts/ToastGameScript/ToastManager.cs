@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class ToastManager : MonoBehaviour, IGameManager
 {
+    public SoundFX soundFxManager;
     [SerializeField] GameObject toast;
     public Transform startPoint;   // Punto de inicio
     public Transform endPoint;     // Punto final
@@ -69,14 +70,16 @@ public class ToastManager : MonoBehaviour, IGameManager
 
     public void LoseGame(SituationType loseType)
     {
-        if(_startGame == false) return;
+        soundFxManager.Fail();
+        if (_startGame == false) return;
         _startGame = false;
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame,loseType, () => SceneManager.LoadScene(LOSE_SCENE));
     }
 
     public void WinGame()
     {
-        if(_toastInMachine < toastInMachineGraphics.Length)
+        soundFxManager.Ganaste();
+        if (_toastInMachine < toastInMachineGraphics.Length)
             toastInMachineGraphics[_toastInMachine].enabled = true;
         _toastInMachine++;
         if (_toastInMachine >= toastToWin)
@@ -86,7 +89,10 @@ public class ToastManager : MonoBehaviour, IGameManager
             ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
         }
         else
+        {
+            soundFxManager.Tostadora();
             ResetGame();
+        }
     }
 
     public void ResetGame()

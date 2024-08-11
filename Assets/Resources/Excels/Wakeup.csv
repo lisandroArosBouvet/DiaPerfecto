@@ -1,4 +1,10 @@
 Tries,Condition,Situation,Message,AudioName
-0,Initial,,/emote:Saludo/Initial message,
-0,LoseGame,,/emote:Enojado/Lose message,
-0,WinGame,,/emote:Feliz/Win message,
+0,Initial,,/emote:Saludo/Es hora de levantarse! Hoy será tu día perfecto!,
+0,Initial,,/emote:Sonriente/Levántate. Es muy fácil! Solo apreta el botón.,
+1,Initial,,/emote:Enojado/Pone pilas! Un caracol lo haría más rápido!,
+2,Initial,,/emote:Furioso/Podrías abrir los ojos... Imbécil!,
+0,LoseGame,,/emote:Ofendido/Al menos... ponele un poco de onda!,
+1,LoseGame,,/emote:Rabioso/En serio? Otra vez?????,
+2,LoseGame,,"/emote:Agotado/Acaso, para esto pediste tu deseo?.... ",
+0,WinGame,,/emote:Sorprendido/Sí lo has logrado... Rayos!,
+0,WinGame,,/emote:Agotado/Por fin! te has levantado... después de tanto tiempo...,

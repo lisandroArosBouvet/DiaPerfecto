@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Car : MonoBehaviour
     {
         MovementCar();
     }
+
     private void MovementCar()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -26,10 +28,21 @@ public class Car : MonoBehaviour
             rb2D.velocity = Vector2.zero;
             return;
         }
+        RotationCar();
         // Calcula la dirección hacia el mouse
         Vector3 direction = (mousePosition - transform.position).normalized;
 
         // Mueve el Rigidbody en esa dirección
         rb2D.velocity = direction * speed;
+    }
+
+    private void RotationCar()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+        transform.up = direction;
     }
 }
