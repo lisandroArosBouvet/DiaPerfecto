@@ -6,14 +6,12 @@ public class PatrolUnit : MonoBehaviour
     public float speed = 2f;       // Velocidad de patrullaje
     private int currentWaypointIndex = 0; // Índice del waypoint actual
 
-    private Rigidbody2D rb2D;
     private Animator anim;
     public SpriteRenderer spriteRenderer;
 
     void Start()
     {
         // Obtener el Rigidbody según el tipo de juego
-        rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); // Obtener el Animator del obje
         anim.speed = speed;
 
@@ -34,8 +32,8 @@ public class PatrolUnit : MonoBehaviour
         {
             // Moverse al siguiente waypoint de manera cíclica
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-            MoveToNextWaypoint();
         }
+            MoveToNextWaypoint();
     }
 
     private bool HasReachedWaypoint()
@@ -50,8 +48,7 @@ public class PatrolUnit : MonoBehaviour
 
     private void MoveToNextWaypoint()
     {
-        Vector3 direction = (waypoints[currentWaypointIndex].position - transform.position).normalized;
-        rb2D.velocity = direction * speed;
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
         spriteRenderer.flipX = transform.position.x < waypoints[currentWaypointIndex].position.x;
 
     }
