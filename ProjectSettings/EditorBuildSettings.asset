@@ -8,4 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ToastGame.unity
+    guid: 48902d4ebbf771f41af825a718daefe0
+  - enabled: 1
+    path: Assets/Scenes/WakeupGame.unity
+    guid: 681935cc528d5ea4bac6b1084da0ea8f
+  - enabled: 1
+    path: Assets/Scenes/GotoJobGame.unity
+    guid: 5fbe23a224cf6714da56bc199744b0a7
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

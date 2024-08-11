@@ -40,12 +40,14 @@ public class ExcelReaderManager : MonoBehaviour
     string pathExcels = "Excels";
 
     private int tries = 0;
-    public DialogManager DialogManager;
+    private DialogManager _dialogManager;
     const string STAR_NAME = "Star";
     public Dictionary<GameType, List<RowDialogue>> excels;
     
     public void EnterDialogue(GameType gameType,ConditionType condition, SituationType situation, UnityAction callback)
     {
+        if (_dialogManager == null)
+            _dialogManager = FindAnyObjectByType<DialogManager>();
         var dialogues = excels[gameType];
         dialogues = dialogues.Where(d => d.Condition == condition.ToString() && CheckSituation(d.Situation, situation)).ToList();
         List<DialogData> dialogsData = new List<DialogData>();
@@ -54,7 +56,7 @@ public class ExcelReaderManager : MonoBehaviour
             dialogsData.Add(new DialogData(d.Message, STAR_NAME));
         }
         dialogsData[dialogsData.Count - 1].Callback = callback;
-        DialogManager.Show(dialogsData);
+        _dialogManager.Show(dialogsData);
     }
     public void EnterDialogue(GameType gameType, ConditionType condition, UnityAction callback)
     {
@@ -88,7 +90,6 @@ public class ExcelReaderManager : MonoBehaviour
     {
         // Cargar todos los textos que están en la carpeta Resources/CSV
         TextAsset[] csvFiles = Resources.LoadAll<TextAsset>(pathExcels);
-        Debug.Log("Count: " +  csvFiles.Length);
         foreach (TextAsset csvFile in csvFiles)
         {
             var rows = new List<RowDialogue>();

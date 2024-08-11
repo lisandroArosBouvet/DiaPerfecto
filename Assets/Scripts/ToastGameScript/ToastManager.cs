@@ -13,6 +13,7 @@ public class ToastManager : MonoBehaviour, IGameManager
     public Transform endPoint;     // Punto final
     public float speed = 1.0f;   // Velocidad de oscilación
 
+
     private Rigidbody2D rb;
     private bool isHeld = false;
     private float timeToOscilian = 0;
@@ -27,7 +28,7 @@ public class ToastManager : MonoBehaviour, IGameManager
     const GameType NAME_GAME =  GameType.Toast;
 
     const string
-        NEXT_SCENE = "SampleScene",
+        NEXT_SCENE = "GotoJobGame",
         LOSE_SCENE = "ToastGame"
         ;
 
@@ -111,5 +112,6 @@ public class ToastManager : MonoBehaviour, IGameManager
             graphic.enabled = false;
         }
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.Initial,()=> _startGame = true);
+
     }
 }
