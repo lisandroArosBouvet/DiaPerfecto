@@ -13,7 +13,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     public Button startLevelBtn;
     [Header("Dialogos")]
     private PatrolUnit[] patrols;
-    private const string NAME_GAME = "GotoJob";
+    const GameType NAME_GAME = GameType.GotoJob;
     public void InitalConfiguration()
     {
         car.enabled = false;
@@ -26,7 +26,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
         }
         FindAnyObjectByType<WinZone>().SetWinGame(WinGame);
 
-        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.Initial, () => startLevelBtn.gameObject.SetActive(true));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.Initial, () => startLevelBtn.gameObject.SetActive(true));
     }
 
     public void StartGame()
@@ -47,13 +47,13 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     {
         EndGame();
         string goScene = "GotoJob";
-        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME,ConditionType.LoseGame, type, ()=> SceneManager.LoadScene(goScene));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.LoseGame, type, ()=> SceneManager.LoadScene(goScene));
     }
 
     public void WinGame()
     {
         EndGame();
-        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene("SampleScene"));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene("SampleScene"));
     }
 
     void Start()

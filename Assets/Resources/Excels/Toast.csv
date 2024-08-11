@@ -1,0 +1,11 @@
+Tries,Condition,Situation,Message,AudioName
+0,Initial,,/emote:Saludo/Hola! Soy Strellin! Y juntos lograremos que tengas un dia perfecto.,
+0,Initial,,/emote:Feliz/El desayuno es la comida mas importante del dia! No la arruines con salmonella,
+0,Initial,,/emote:Sonriente/Solo pon el pan dentro de la tostadora! /emote:Enojado/ No es dificil... ¿Verdad?,
+0,LoseGame,SobreLaMesa,/emote:Furioso/ES MUY SIMPLE,
+0,LoseGame,SobreLaMesa,/emote:Agotado/Hay que intentarlo otra vez...,
+0,LoseGame,CayoMesa,/emote:Sorprendido/Como es que le puedes errar por tanto?,
+0,LoseGame,CayoMesa,/emote:Asco/Llenaste el desayuno de salmonella,
+0,WinGame,,/emote:Sorprendido/Lo lograste?,
+0,WinGame,,/emote:Sonriente/SI! Lo lograste!,
+0,WinGame,,/emote:Feliz/Continuemos con nuestras aventuras!,

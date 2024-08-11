@@ -6,27 +6,47 @@ using System.Linq;
 using Doublsb.Dialog;
 using System;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class ExcelReaderManager : MonoBehaviour
 {
-    string pathExcels = "Excels";
     private static ExcelReaderManager _instance;
+
+    public static ExcelReaderManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                // Busca la instancia en la escena si no ha sido asignada
+                _instance = FindAnyObjectByType<ExcelReaderManager>();
+
+                if (_instance == null)
+                {
+                    // Si no la encuentra, crea un nuevo GameObject con el Singleton
+                    GameObject singletonObject = new GameObject();
+                    _instance = singletonObject.AddComponent<ExcelReaderManager>();
+                    singletonObject.name = typeof(ExcelReaderManager).ToString() + " (Singleton)";
+
+                    // Asegúrate de que el singleton no se destruya al cargar una nueva escena
+                    DontDestroyOnLoad(singletonObject);
+                }
+            }
+            return _instance;
+        }
+    }
+
+
+    string pathExcels = "Excels";
 
     private int tries = 0;
     public DialogManager DialogManager;
     const string STAR_NAME = "Star";
-    public Dictionary<string, List<RowDialogue>> excels = new();
-    public static ExcelReaderManager GetInstance()
+    public Dictionary<GameType, List<RowDialogue>> excels;
+    
+    public void EnterDialogue(GameType gameType,ConditionType condition, SituationType situation, UnityAction callback)
     {
-        if (_instance == null)
-        {
-            _instance = new ExcelReaderManager();
-        }
-        return _instance;
-    }
-    public void EnterDialogue(string nameGame,ConditionType condition, SituationType situation, UnityAction callback)
-    {
-        var dialogues = excels[nameGame];
+        var dialogues = excels[gameType];
         dialogues = dialogues.Where(d => d.Condition == condition.ToString() && CheckSituation(d.Situation, situation)).ToList();
         List<DialogData> dialogsData = new List<DialogData>();
         foreach (var d in dialogues)
@@ -36,9 +56,9 @@ public class ExcelReaderManager : MonoBehaviour
         dialogsData[dialogsData.Count - 1].Callback = callback;
         DialogManager.Show(dialogsData);
     }
-    public void EnterDialogue(string nameGame, ConditionType condition, UnityAction callback)
+    public void EnterDialogue(GameType gameType, ConditionType condition, UnityAction callback)
     {
-        EnterDialogue(nameGame,condition, SituationType.Ninguna, callback);
+        EnterDialogue(gameType, condition, SituationType.Ninguna, callback);
     }
     private bool CheckSituation(string comparation, SituationType situationType )
     {
@@ -59,7 +79,7 @@ public class ExcelReaderManager : MonoBehaviour
     void Awake()
     {
         // Inicializa el diccionario
-        excels = new Dictionary<string, List<RowDialogue>>();
+        excels = new Dictionary<GameType, List<RowDialogue>>();
 
         // Carga todos los archivos CSV en la carpeta Resources/CSV
         LoadCSVFiles();
@@ -68,7 +88,7 @@ public class ExcelReaderManager : MonoBehaviour
     {
         // Cargar todos los textos que están en la carpeta Resources/CSV
         TextAsset[] csvFiles = Resources.LoadAll<TextAsset>(pathExcels);
-
+        Debug.Log("Count: " +  csvFiles.Length);
         foreach (TextAsset csvFile in csvFiles)
         {
             var rows = new List<RowDialogue>();
@@ -104,9 +124,29 @@ public class ExcelReaderManager : MonoBehaviour
 
             // Añadir la lista de RowDialogue al diccionario usando el nombre del archivo como clave
             string fileName = csvFile.name; // Usa el nombre del archivo sin la extensión
-            excels[fileName] = rows;
+            excels.Add(ConvertStringToGame(fileName), rows);
         }
     }
+    private GameType ConvertStringToGame(string nameGame)
+    {
+        switch (nameGame)
+        {
+            case "Toast":
+                return GameType.Toast;
+            case "GotoJob":
+                return GameType.GotoJob;
+            case "Wakeup":
+                return GameType.Wakeup;
+            default:
+                return GameType.Toast;
+        }
+    }
+}
+public enum GameType
+{
+    Toast,
+    GotoJob,
+    Wakeup
 }
 public enum ConditionType
 {
@@ -121,7 +161,9 @@ public enum SituationType
     SalisteDelLimites,
     ChocasteValla,
     ChocasteAncianita,
-    cChocasteObrero
+    ChocasteObrero,
+    SobreLaMesa,
+    CayoMesa
 }
 
 public class RowDialogue

@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 
 namespace Doublsb.Dialog
 {
@@ -82,9 +83,11 @@ namespace Doublsb.Dialog
             _find_character(Data.Character);
 
             if(_current_Character != null)
-                _emote("Normal");
-
-            _textingRoutine = StartCoroutine(Activate());
+            {
+                string fistEmote = _current_Character.Emotion.Data.First().Key;
+                _emote(fistEmote);
+            }
+           _textingRoutine = StartCoroutine(Activate());
         }
 
         public void Show(List<DialogData> Data)

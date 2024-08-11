@@ -24,7 +24,13 @@ public class ToastManager : MonoBehaviour, IGameManager
     public int toastToWin = 2;
     private int _toastInMachine = 0;
     private bool _startGame = false;
-    const string NAME_GAME = "Toast";
+    const GameType NAME_GAME =  GameType.Toast;
+
+    const string
+        NEXT_SCENE = "SampleScene",
+        LOSE_SCENE = "ToastGame"
+        ;
+
     void Start()
     {
         InitalConfiguration();
@@ -42,7 +48,7 @@ public class ToastManager : MonoBehaviour, IGameManager
         {
             if(rb.velocity.magnitude < stillThreshold)
             {
-                LoseGame(0);
+                LoseGame(SituationType.SobreLaMesa);
             }
         }
 
@@ -64,7 +70,7 @@ public class ToastManager : MonoBehaviour, IGameManager
     {
         if(_startGame == false) return;
         _startGame = false;
-        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.LoseGame, () => SceneManager.LoadScene("SampleScene"));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame,loseType, () => SceneManager.LoadScene(LOSE_SCENE));
     }
 
     public void WinGame()
@@ -76,7 +82,7 @@ public class ToastManager : MonoBehaviour, IGameManager
         {
             _startGame = false;
             rb.MovePosition(endPoint.position);
-            ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene("SampleScene"));
+            ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
         }
         else
             ResetGame();
@@ -104,6 +110,6 @@ public class ToastManager : MonoBehaviour, IGameManager
         {
             graphic.enabled = false;
         }
-        ExcelReaderManager.GetInstance().EnterDialogue(NAME_GAME,ConditionType.Initial,()=> _startGame = true);
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.Initial,()=> _startGame = true);
     }
 }
