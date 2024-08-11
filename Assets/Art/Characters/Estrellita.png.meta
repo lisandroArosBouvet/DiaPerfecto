@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: c8bc016bb5790bd4ea09509cb86e3b23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7804614462724938812
+    second: Estrellita_0
+  - first:
+      213: 2724254171644471140
+    second: Estrellita_1
+  - first:
+      213: 8524863538298569718
+    second: Estrellita_2
+  - first:
+      213: 4925894601713987319
+    second: Estrellita_3
+  - first:
+      213: 8303364722272956118
+    second: Estrellita_4
+  - first:
+      213: 5533905838706577798
+    second: Estrellita_5
+  - first:
+      213: 5462375552232295260
+    second: Estrellita_6
+  - first:
+      213: -166695589185627290
+    second: Estrellita_7
+  - first:
+      213: -8678826297691762808
+    second: Estrellita_8
+  - first:
+      213: 6326573033003735674
+    second: Estrellita_9
+  - first:
+      213: 8328529168966950383
+    second: Estrellita_10
+  - first:
+      213: 6137578740103838523
+    second: Estrellita_11
+  - first:
+      213: -4039015362617032063
+    second: Estrellita_12
+  - first:
+      213: -4810110617269270804
+    second: Estrellita_13
+  - first:
+      213: -3687258378897274751
+    second: Estrellita_14
+  - first:
+      213: -5321990178787437085
+    second: Estrellita_15
+  - first:
+      213: 6788459989281007054
+    second: Estrellita_16
+  - first:
+      213: 7617942769310991181
+    second: Estrellita_17
+  - first:
+      213: -4600608036271695975
+    second: Estrellita_18
+  - first:
+      213: -3315519486484784312
+    second: Estrellita_19
+  - first:
+      213: 5054668025572180407
+    second: Estrellita_20
+  - first:
+      213: 1115681003591881869
+    second: Estrellita_21
+  - first:
+      213: -5636830015505544366
+    second: Estrellita_22
+  - first:
+      213: -5909745750657944746
+    second: Estrellita_23
+  - first:
+      213: 584474638441939442
+    second: Estrellita_24
+  - first:
+      213: 1530389796207786023
+    second: Estrellita_25
+  - first:
+      213: -5677094413810703200
+    second: Estrellita_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Star_Feliz
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1197
+        width: 509
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3676c2f7070b390800000000000000
+      internalID: -7804614462724938812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Saludo
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1193
+        width: 557
+        height: 533
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467aeb24cbe7ec520800000000000000
+      internalID: 2724254171644471140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Sonriente
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 1209
+        width: 478
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe2d20ba0b4c5440800000000000000
+      internalID: 4925894601713987319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Sorprendido
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 1203
+        width: 486
+        height: 625
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dee697c83a7b3370800000000000000
+      internalID: 8303364722272956118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Agotado
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 1201
+        width: 446
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681d0985a026ccc40800000000000000
+      internalID: 5533905838706577798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Asco
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 618
+        width: 440
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b8594bf914ecb40800000000000000
+      internalID: 5462375552232295260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Enojado
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 606
+        width: 509
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b57fcae37cfadf0800000000000000
+      internalID: -166695589185627290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Furioso
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 627
+        width: 541
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f83c2f67d9e8780800000000000000
+      internalID: -8678826297691762808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Rabioso
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 613
+        width: 556
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed11c91721e49370800000000000000
+      internalID: 8328529168966950383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Ofendido
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 620
+        width: 373
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182cdd46de882f7c0800000000000000
+      internalID: -4039015362617032063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Borracho
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 872
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4657c85b8e631b0800000000000000
+      internalID: -5677094413810703200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 16d5c009c878463408b4509ece20f48f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Star_Agotado: 5533905838706577798
+      Star_Asco: 5462375552232295260
+      Star_Borracho: -5677094413810703200
+      Star_Enojado: -166695589185627290
+      Star_Feliz: -7804614462724938812
+      Star_Furioso: -8678826297691762808
+      Star_Ofendido: -4039015362617032063
+      Star_Rabioso: 8328529168966950383
+      Star_Saludo: 2724254171644471140
+      Star_Sonriente: 4925894601713987319
+      Star_Sorprendido: 8303364722272956118
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
