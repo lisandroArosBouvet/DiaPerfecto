@@ -14,6 +14,10 @@ public class Car : MonoBehaviour
 
     void Update()
     {
+        MovementCar();
+    }
+    private void MovementCar()
+    {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = transform.position.z; // Mantén la misma posición Z
 

@@ -55,6 +55,16 @@ public class ExcelReaderManager : MonoBehaviour
         {
             dialogsData.Add(new DialogData(d.Message, STAR_NAME));
         }
+        if(dialogsData.Count == 0)
+        {
+            dialogues = excels[gameType];
+            dialogues = dialogues.Where(d => d.Condition == condition.ToString()).ToList();
+            dialogsData = new List<DialogData>();
+            foreach (var d in dialogues)
+            {
+                dialogsData.Add(new DialogData(d.Message, STAR_NAME));
+            }
+        }
         dialogsData[dialogsData.Count - 1].Callback = callback;
         _dialogManager.Show(dialogsData);
     }

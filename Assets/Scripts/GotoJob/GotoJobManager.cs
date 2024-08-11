@@ -13,7 +13,11 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     public Button startLevelBtn;
     [Header("Dialogos")]
     private PatrolUnit[] patrols;
-    const GameType NAME_GAME = GameType.GotoJob;
+    const GameType NAME_GAME = GameType.GotoJob; 
+    const string
+        NEXT_SCENE = "SampleScene",
+        LOSE_SCENE = "GotoJobGame"
+        ;
     public void InitalConfiguration()
     {
         car.enabled = false;
@@ -46,14 +50,13 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     public void LoseGame(SituationType type)
     {
         EndGame();
-        string goScene = "GotoJob";
-        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.LoseGame, type, ()=> SceneManager.LoadScene(goScene));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.LoseGame, type, ()=> SceneManager.LoadScene(LOSE_SCENE));
     }
 
     public void WinGame()
     {
         EndGame();
-        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene("SampleScene"));
+        ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
     }
 
     void Start()

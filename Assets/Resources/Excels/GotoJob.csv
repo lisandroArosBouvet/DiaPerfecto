@@ -1,0 +1,4 @@
+Tries,Condition,Situation,Message,AudioName
+0,Initial,,/emote:Saludo/Initial message,
+0,LoseGame,,/emote:Enojado/Lose message,
+0,WinGame,,/emote:Feliz/Win message,
