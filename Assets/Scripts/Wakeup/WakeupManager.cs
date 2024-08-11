@@ -9,7 +9,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
 {
     const GameType NAME_GAME = GameType.Wakeup;
 
-    const string
+    public string
         NEXT_SCENE = "ToastGame",
         LOSE_SCENE = "WakeupGame"
         ;

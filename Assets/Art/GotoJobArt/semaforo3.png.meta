@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c323c30943c68b343ab8bbc332dc3eed
+guid: 1e00479469eda1442953d753758f7880
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2649975309624794468
-    second: Cutscene_back_0
+      213: 492156086028802863
+    second: semaforo3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cutscene_back_0
+      name: semaforo3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 40
+        y: 47
+        width: 1607
+        height: 590
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c92224efe75693bd0800000000000000
-      internalID: -2649975309624794468
+      spriteID: f2b1bc94a5d74d600800000000000000
+      internalID: 492156086028802863
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Cutscene_back_0: -2649975309624794468
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

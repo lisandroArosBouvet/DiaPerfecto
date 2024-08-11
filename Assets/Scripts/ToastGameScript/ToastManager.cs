@@ -27,7 +27,7 @@ public class ToastManager : MonoBehaviour, IGameManager
     private bool _startGame = false;
     const GameType NAME_GAME =  GameType.Toast;
 
-    const string
+    public string
         NEXT_SCENE = "GotoJobGame",
         LOSE_SCENE = "ToastGame"
         ;

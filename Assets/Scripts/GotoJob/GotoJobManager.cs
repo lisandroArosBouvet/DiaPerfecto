@@ -14,7 +14,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     [Header("Dialogos")]
     private PatrolUnit[] patrols;
     const GameType NAME_GAME = GameType.GotoJob; 
-    const string
+    public string
         NEXT_SCENE = "SampleScene",
         LOSE_SCENE = "GotoJobGame"
         ;
