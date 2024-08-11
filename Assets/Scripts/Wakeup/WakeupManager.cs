@@ -144,9 +144,9 @@ public class WakeupManager : MonoBehaviour, IGameManager
             _correctKeys[key].CorrectKey();
             _correctKeys.Remove(key);
             BlurOut();
-            if (_correctKeys.Count <= 0)
-                WinGame();
-        }else
+            if (_correctKeys.Count <= 0) PreWin();
+        }
+        else
         {
             LoseGame(SituationType.Ninguna);
         }
@@ -157,11 +157,15 @@ public class WakeupManager : MonoBehaviour, IGameManager
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame, type, () => SceneManager.LoadScene(LOSE_SCENE));
     }
 
-    public void WinGame()
+    private void PreWin()
     {
         _startGame = false;
         upperEyelid.GetComponent<Image>().enabled = false;
         lowerEyelid.GetComponent<Image>().enabled = false;
+        Invoke("WinGame",1.5f);
+    }
+    public void WinGame()
+    {
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
     }
     private void BlurOut()
