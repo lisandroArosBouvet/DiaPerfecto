@@ -30,5 +30,6 @@ public class TornBubbleKey : MonoBehaviour
     {
         button.interactable = false;
         animator.Play("Pop");
+        GetComponent<AudioSource>().Play();
     }
 }

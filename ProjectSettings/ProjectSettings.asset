@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: DiaPerfecto
   defaultCursor: {fileID: 2800000, guid: decb4e1716dcd0e45be0a6cf8dc8ff44, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 2, y: 2}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
