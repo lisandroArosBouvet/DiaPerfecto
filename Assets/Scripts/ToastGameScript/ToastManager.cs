@@ -2,9 +2,11 @@ using Doublsb.Dialog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Metadata;
 
 public class ToastManager : MonoBehaviour, IGameManager
 {
@@ -16,10 +18,11 @@ public class ToastManager : MonoBehaviour, IGameManager
 
 
     private Rigidbody2D rb;
+    public GameObject[] toastBones;
     private bool isHeld = false;
     private float timeToOscilian = 0;
 
-    public float stillThreshold = 0.01f;
+    public float stillThreshold = 0.04f;
 
     [Header("WinConditions")]
     public SpriteRenderer[] toastInMachineGraphics;
@@ -48,7 +51,7 @@ public class ToastManager : MonoBehaviour, IGameManager
             rb.velocity = new Vector2(Mathf.Sin(timeToOscilian) *speed, 0);
         }else
         {
-            if(rb.velocity.magnitude < stillThreshold)
+            if (rb.velocity.magnitude < stillThreshold)
             {
                 LoseGame(SituationType.SobreLaMesa);
             }
@@ -65,6 +68,11 @@ public class ToastManager : MonoBehaviour, IGameManager
     {
         isHeld = false;
         rb.gravityScale = 1;
+        foreach (var c in toastBones)
+        {
+            c.SetActive(true);
+            c.GetComponent<Rigidbody2D>().velocity = rb.velocity;
+        }
         //rb.velocity = CalculateReleaseVelocity(); // Mantener la inercia en el momento de la liberación
     }
 
@@ -78,20 +86,23 @@ public class ToastManager : MonoBehaviour, IGameManager
 
     public void WinGame()
     {
-        soundFxManager.Ganaste();
+        if (_startGame == false)
+            return;
+        _startGame = false;
         if (_toastInMachine < toastInMachineGraphics.Length)
             toastInMachineGraphics[_toastInMachine].enabled = true;
         _toastInMachine++;
         if (_toastInMachine >= toastToWin)
         {
-            _startGame = false;
             rb.MovePosition(endPoint.position);
+            soundFxManager.Ganaste();
             ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
         }
         else
         {
             soundFxManager.Tostadora();
             ResetGame();
+            _startGame = true;
         }
     }
 
@@ -99,11 +110,15 @@ public class ToastManager : MonoBehaviour, IGameManager
     {
         rb.velocity = Vector2.zero;
         rb.MovePosition(startPoint.position);
-        isHeld = true;
         rb.gravityScale = 0;
         timeToOscilian = 0;
         rb.rotation = 0;
         rb.angularVelocity = 0;
+        isHeld = true;
+        foreach (var c in toastBones)
+        {
+            c.SetActive(false);
+        }
     }
 
     public void InitalConfiguration()
