@@ -29,24 +29,21 @@ public class WakeupManager : MonoBehaviour, IGameManager
     public float maxDistance;
     private float _distanceToRest;
     [Header("JustDance")]
-    public int neederKeys = 10;
+    public int neederBubbles = 25;
     private float _percentBlurRest = 1f;
     public TornBubbleKey bubbleKeyModel;
     public RectTransform bubbleSpawnerArea;
 
-    private KeyCode[] _possibilityKeys = new KeyCode[] {
-        KeyCode.Q,KeyCode.W,KeyCode.E,KeyCode.R,KeyCode.T,KeyCode.Y,KeyCode.U,KeyCode.I,KeyCode.O,KeyCode.P,
-    KeyCode.A,KeyCode.S,KeyCode.D,KeyCode.F,KeyCode.G,KeyCode.H,KeyCode.J,KeyCode.K,KeyCode.L
-    ,KeyCode.Z,KeyCode.X,KeyCode.C,KeyCode.V,KeyCode.B,KeyCode.N,KeyCode.M};
-    private Dictionary<KeyCode, TornBubbleKey> _correctKeys = new();
-
     [Header("Eyelids")]
     public RectTransform upperEyelid;  // Referencia al RectTransform del párpado superior
     public RectTransform lowerEyelid;  // Referencia al RectTransform del párpado inferior
-
-    public float openStep = 10f;       // Cantidad de píxeles que se mueven los párpados al hacer clic
+    public AnimationCurve openStepForce;
+    public int maxClickForForce = 20;
+    private float _forceInForStep;
+    private float _openStepForce;       // Cantidad de píxeles que se mueven los párpados al hacer clic
+    public float openStep;
     public float closeForce = 20f;     // Fuerza que cierra los párpados por segundo
-    public float maxOpenAmount = 100f; // Máxima distancia que pueden abrirse los párpados
+    public float maxOpenAmount = 10; // Máxima distancia que pueden abrirse los párpados
 
     private float _initialUpperPosY;    // Posición inicial del párpado superior
     private float _initialLowerPosY;    // Posición inicial del párpado inferior
@@ -63,14 +60,6 @@ public class WakeupManager : MonoBehaviour, IGameManager
         if (_startGame == false)
             return;
 
-        foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
-        {
-            // Si se presiona una tecla y no es un botón del mouse
-            if (Input.GetKeyDown(keyCode) && !IsMouseButton(keyCode))
-            {
-                PressKey(keyCode);
-            }
-        }
         cama.position = Vector3.LerpUnclamped(cama.position,camaDestiny.position, smoothTime);
         pared.position = Vector3.Lerp(pared.position,paredDestiny.position, smoothTime);
 
@@ -85,8 +74,9 @@ public class WakeupManager : MonoBehaviour, IGameManager
         if (Input.GetMouseButtonDown(0))
         {
             // Al hacer clic, abrir los párpados un poco
-            _currentUpperPosY += openStep;
-            _currentLowerPosY -= openStep;
+            _openStepForce += _forceInForStep;
+            _currentUpperPosY += openStepForce.Evaluate(_openStepForce)* openStep;
+            _currentLowerPosY -= openStepForce.Evaluate(_openStepForce)*openStep;
 
             // Limitar la apertura máxima
             _currentUpperPosY = Mathf.Min(_currentUpperPosY, _initialUpperPosY + maxOpenAmount);
@@ -103,11 +93,12 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void InitalConfiguration()
     {
-        // Guardar las posiciones iniciales de los párpados
-        _initialUpperPosY = upperEyelid.anchoredPosition.y;
+        _forceInForStep = 1f / (float)maxClickForForce;
+    // Guardar las posiciones iniciales de los párpados
+    _initialUpperPosY = upperEyelid.anchoredPosition.y;
         _initialLowerPosY = lowerEyelid.anchoredPosition.y;
 
-        _distanceToRest = maxDistance / (float)neederKeys;
+        _distanceToRest = maxDistance / (float)neederBubbles;
         // Inicializar las posiciones actuales como las iniciales
         _currentUpperPosY = _initialUpperPosY;
         _currentLowerPosY = _initialLowerPosY;
@@ -115,18 +106,16 @@ public class WakeupManager : MonoBehaviour, IGameManager
         {
             _startGame = true;
             watchCooldown.SetTimeAndFinishEvent(timeToFinishGame, () => LoseGame(SituationType.SeTerminoElTiempo));
+
+            _currentUpperPosY += maxOpenAmount;
+            _currentLowerPosY -= maxOpenAmount;
         });
 
-        for (int i = 0; i < neederKeys; i++)
+        for (int i = 0; i < neederBubbles; i++)
         {
             var bubble = Instantiate(bubbleKeyModel, bubbleKeyModel.transform.parent);
             bubble.gameObject.SetActive(true);
-            KeyCode key = _possibilityKeys[Random.Range(0,_possibilityKeys.Length)];
-            while(_correctKeys.ContainsKey(key))
-                key = _possibilityKeys[Random.Range(0, _possibilityKeys.Length)];
-            _correctKeys.Add(key, bubble);
 
-            bubble.SetKeyText(key);
             Vector2 randomPosition = GetRandomPositionInImage();
             bubble.GetComponent<RectTransform>().anchoredPosition = randomPosition;
         }
@@ -143,19 +132,12 @@ public class WakeupManager : MonoBehaviour, IGameManager
 
         return new Vector2(randomX, randomY);
     }
-    public void PressKey(KeyCode key)
+    public void PressKey()
     {
-        if(_correctKeys.ContainsKey(key))
-        {
-            _correctKeys[key].CorrectKey();
-            _correctKeys.Remove(key);
-            BlurOut();
-            if (_correctKeys.Count <= 0) PreWin();
-        }
-        else
-        {
-            LoseGame(SituationType.Ninguna);
-        }
+        neederBubbles--;
+        if (neederBubbles <= 0)
+            PreWin();
+        BlurOut();
     }
     public void LoseGame(SituationType type)
     {
@@ -181,7 +163,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     private void BlurOut()
     {
-        _percentBlurRest -= 1f / (float)neederKeys;
+        _percentBlurRest -= 1f / (float)neederBubbles;
         foreach (var sprite in blurSprites)
         {
             sprite.color = new Color(1, 1, 1, _percentBlurRest);

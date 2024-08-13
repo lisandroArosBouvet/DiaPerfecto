@@ -8,16 +8,15 @@ using UnityEngine.UI;
 public class TornBubbleKey : MonoBehaviour
 {
     float _turnSpeed;
-    public TMP_Text text;
     public Button button;
     public Animator animator;
     private void Start()
     {
-        _turnSpeed = UnityEngine.Random.Range(-90,90);   
+        _turnSpeed = UnityEngine.Random.Range(-90,90);
+        transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
     }
-    public void SetKeyText(KeyCode key)
+    public void SetKeyText()
     {
-        text.text = key.ToString();
         transform.Rotate(0, 0, UnityEngine.Random.Range(0, 360));
     }
 
@@ -26,7 +25,7 @@ public class TornBubbleKey : MonoBehaviour
         transform.Rotate(0, 0, _turnSpeed * Time.deltaTime);
     }
 
-    internal void CorrectKey()
+    public void CorrectKey()
     {
         button.interactable = false;
         animator.Play("Pop");
