@@ -50,6 +50,10 @@ public class WakeupManager : MonoBehaviour, IGameManager
     private float _currentUpperPosY;    // Posición actual del párpado superior
     private float _currentLowerPosY;    // Posición actual del párpado inferior
 
+    public Vector2 _pitchLimits = new Vector2(.5f,2f);
+    private float _currentPitch;
+    private float _addPitch;
+
     private void Start()
     {
         bubbleKeyModel.gameObject.SetActive(false);
@@ -119,6 +123,9 @@ public class WakeupManager : MonoBehaviour, IGameManager
             Vector2 randomPosition = GetRandomPositionInImage();
             bubble.GetComponent<RectTransform>().anchoredPosition = randomPosition;
         }
+        _currentPitch = _pitchLimits.x;
+        float maxPitch = _pitchLimits.y - _pitchLimits.x;
+        _addPitch = maxPitch / (float)neederBubbles;
     }
     Vector2 GetRandomPositionInImage()
     {
@@ -134,6 +141,9 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void PressKey()
     {
+        soundFxManager.SetPitch(_currentPitch);
+        soundFxManager.Burbuja();
+        _currentPitch += _addPitch;
         neederBubbles--;
         if (neederBubbles <= 0)
             PreWin();

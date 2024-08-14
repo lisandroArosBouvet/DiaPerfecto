@@ -44,4 +44,8 @@ public class SoundFX : MonoBehaviour
         audioSource.clip = tostadora;
         audioSource.Play();
     }
+    public void SetPitch(float pitch)
+    {
+        audioSource.pitch = pitch;
+    }
 }

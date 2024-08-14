@@ -1,0 +1,628 @@
+fileFormatVersion: 2
+guid: 2a03cb7cd27b3ca458367512703fc7a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2095872203196124117
+    second: Spritesheet_nubes_0
+  - first:
+      213: -2801646265781102314
+    second: Spritesheet_nubes_1
+  - first:
+      213: -7777302490736035843
+    second: Spritesheet_nubes_2
+  - first:
+      213: -3296630714697883909
+    second: Spritesheet_nubes_3
+  - first:
+      213: 3544151045486569196
+    second: Spritesheet_nubes_4
+  - first:
+      213: 8369748327171506022
+    second: Spritesheet_nubes_5
+  - first:
+      213: 84898159380678927
+    second: Spritesheet_nubes_6
+  - first:
+      213: 1754186507890952363
+    second: Spritesheet_nubes_7
+  - first:
+      213: -7836123924580454942
+    second: Spritesheet_nubes_8
+  - first:
+      213: 4956300167798822069
+    second: Spritesheet_nubes_9
+  - first:
+      213: 2593246397481078732
+    second: Spritesheet_nubes_10
+  - first:
+      213: -2756067489688351995
+    second: Spritesheet_nubes_11
+  - first:
+      213: 8517149303033643096
+    second: Spritesheet_nubes_12
+  - first:
+      213: -3661293182033818322
+    second: Spritesheet_nubes_13
+  - first:
+      213: -1738599489840781197
+    second: Spritesheet_nubes_14
+  - first:
+      213: 5115358047430404488
+    second: Spritesheet_nubes_15
+  - first:
+      213: -1579624219990948418
+    second: Spritesheet_nubes_16
+  - first:
+      213: 6783227252751060605
+    second: Spritesheet_nubes_17
+  - first:
+      213: 2177797626997113346
+    second: Spritesheet_nubes_18
+  - first:
+      213: 647786095509448202
+    second: Spritesheet_nubes_19
+  - first:
+      213: 888073793299264824
+    second: Spritesheet_nubes_20
+  - first:
+      213: 3728932806006249063
+    second: Spritesheet_nubes_21
+  - first:
+      213: -2620444830373064502
+    second: Spritesheet_nubes_22
+  - first:
+      213: 853650360477843452
+    second: Spritesheet_nubes_23
+  - first:
+      213: -6107678476605257912
+    second: Spritesheet_nubes_24
+  - first:
+      213: -7677908672344654073
+    second: Spritesheet_nubes_25
+  - first:
+      213: -4118213206667489104
+    second: Spritesheet_nubes_26
+  - first:
+      213: 1962173872037159506
+    second: Spritesheet_nubes_27
+  - first:
+      213: 1420556835778928565
+    second: Spritesheet_nubes_28
+  - first:
+      213: -8141018525948103295
+    second: Spritesheet_nubes_29
+  - first:
+      213: 6566351551420112484
+    second: Spritesheet_nubes_30
+  - first:
+      213: 2087705870505205761
+    second: Spritesheet_nubes_31
+  - first:
+      213: 6006747688403149793
+    second: Spritesheet_nubes_32
+  - first:
+      213: 3908986656255681967
+    second: Spritesheet_nubes_33
+  - first:
+      213: -2654137624411900870
+    second: Spritesheet_nubes_34
+  - first:
+      213: -7879370094802533730
+    second: Spritesheet_nubes_35
+  - first:
+      213: -2057126496171426147
+    second: Spritesheet_nubes_36
+  - first:
+      213: -2602065657125921027
+    second: Spritesheet_nubes_37
+  - first:
+      213: -2910572726185505462
+    second: Spritesheet_nubes_38
+  - first:
+      213: -6651763844431193405
+    second: Spritesheet_nubes_39
+  - first:
+      213: -1542319597870408665
+    second: Spritesheet_nubes_40
+  - first:
+      213: 4694653856248737519
+    second: Spritesheet_nubes_41
+  - first:
+      213: 9114242235543403720
+    second: Spritesheet_nubes_42
+  - first:
+      213: 3188581732563815861
+    second: Spritesheet_nubes_43
+  - first:
+      213: -8212129513411238237
+    second: Spritesheet_nubes_44
+  - first:
+      213: 6834400406981793993
+    second: Spritesheet_nubes_45
+  - first:
+      213: -5332819367739738910
+    second: Spritesheet_nubes_46
+  - first:
+      213: 6771238384549018160
+    second: Spritesheet_nubes_47
+  - first:
+      213: 8514504810854558574
+    second: Spritesheet_nubes_48
+  - first:
+      213: 7621629154399216733
+    second: Spritesheet_nubes_49
+  - first:
+      213: 2372836418133420978
+    second: Spritesheet_nubes_50
+  - first:
+      213: 5352631327575713443
+    second: Spritesheet_nubes_51
+  - first:
+      213: -4128211041363542373
+    second: Spritesheet_nubes_52
+  - first:
+      213: 1546980311872236622
+    second: Spritesheet_nubes_53
+  - first:
+      213: -6557614252901410839
+    second: Spritesheet_nubes_54
+  - first:
+      213: -1769925800905632747
+    second: Spritesheet_nubes_55
+  - first:
+      213: -8798598286653035920
+    second: Spritesheet_nubes_56
+  - first:
+      213: -8925070635108646886
+    second: Spritesheet_nubes_57
+  - first:
+      213: -5982946606830937776
+    second: Spritesheet_nubes_58
+  - first:
+      213: -6431019475055006832
+    second: Spritesheet_nubes_59
+  - first:
+      213: -3208922470828736778
+    second: Spritesheet_nubes_60
+  - first:
+      213: 2190418735517829218
+    second: Spritesheet_nubes_61
+  - first:
+      213: -318610601424229324
+    second: Spritesheet_nubes_62
+  - first:
+      213: 7106512880950391873
+    second: Spritesheet_nubes_63
+  - first:
+      213: 7847906065659641929
+    second: Spritesheet_nubes_64
+  - first:
+      213: -7728803079042841135
+    second: Spritesheet_nubes_65
+  - first:
+      213: 7896648980760253524
+    second: Spritesheet_nubes_66
+  - first:
+      213: -2095748646975947354
+    second: Spritesheet_nubes_67
+  - first:
+      213: -726989277134770271
+    second: Spritesheet_nubes_68
+  - first:
+      213: -6382782925553232489
+    second: Spritesheet_nubes_69
+  - first:
+      213: -1830028788497296248
+    second: Spritesheet_nubes_70
+  - first:
+      213: 9108269894436240645
+    second: Spritesheet_nubes_71
+  - first:
+      213: 6378450455680578478
+    second: Spritesheet_nubes_72
+  - first:
+      213: -2244854502136183106
+    second: Spritesheet_nubes_73
+  - first:
+      213: 9123839765404133863
+    second: Spritesheet_nubes_74
+  - first:
+      213: 6458307311372685011
+    second: Spritesheet_nubes_75
+  - first:
+      213: -6284801940085578063
+    second: Spritesheet_nubes_76
+  - first:
+      213: 8879481780845183132
+    second: Spritesheet_nubes_77
+  - first:
+      213: 6103086984925803571
+    second: Spritesheet_nubes_78
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_nubes_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057442595124cc7429ef1dc36384db15
+      internalID: -1339840895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324789185aec00540ba1257707c282e7
+      internalID: -1292616398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb772feb1c051d42af3039d2520de94
+      internalID: -526843266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fc229a5b1ec9c42bdfb5b162078dd9
+      internalID: -1594267967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd22db08d4833f94cbb29dc99eb6869e
+      internalID: -1600878437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c704a05e32cc2c4a841afe579501c38
+      internalID: -1121933039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141027fa71f891e41921f293a0e4a5d4
+      internalID: -1097915603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c7412f23dbf9147b8ac7696eba3c0f
+      internalID: -1568509089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd95954b4cd2ed745b7faa10a3d1f623
+      internalID: 1009013318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ce4951f69ef7647a07235ad27dc0b1
+      internalID: 97878360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25128756fdc2d13469bd9451ee37ca6a
+      internalID: 1879198805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_nubes_11
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 272
+        width: 163
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2468ed949cb0d7d44a8cf9efa514b23c
+      internalID: -735901715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 198d31d6e702f4a44ae4d92fc6d0d979
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Spritesheet_nubes_0: -1339840895
+      Spritesheet_nubes_1: -1292616398
+      Spritesheet_nubes_10: 1879198805
+      Spritesheet_nubes_11: -735901715
+      Spritesheet_nubes_2: -526843266
+      Spritesheet_nubes_3: -1594267967
+      Spritesheet_nubes_4: -1600878437
+      Spritesheet_nubes_5: -1121933039
+      Spritesheet_nubes_6: -1097915603
+      Spritesheet_nubes_7: -1568509089
+      Spritesheet_nubes_8: 1009013318
+      Spritesheet_nubes_9: 97878360
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

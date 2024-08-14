@@ -1,12 +1,5 @@
-using Doublsb.Dialog;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Metadata;
 
 public class ToastManager : MonoBehaviour, IGameManager
 {
@@ -89,6 +82,7 @@ public class ToastManager : MonoBehaviour, IGameManager
         if (_startGame == false)
             return;
         _startGame = false;
+        Debug.Log("Esta entrando en wingame");
         if (_toastInMachine < toastInMachineGraphics.Length)
             toastInMachineGraphics[_toastInMachine].enabled = true;
         _toastInMachine++;
@@ -100,21 +94,27 @@ public class ToastManager : MonoBehaviour, IGameManager
         }
         else
         {
-            soundFxManager.Tostadora();
             ResetGame();
+            soundFxManager.Tostadora();
             _startGame = true;
         }
     }
 
     public void ResetGame()
     {
+        var anotherToast = Instantiate(toast, toast.transform.parent);
+        rb = anotherToast.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
-        rb.MovePosition(startPoint.position);
         rb.gravityScale = 0;
         timeToOscilian = 0;
+        rb.totalTorque = 0;
         rb.rotation = 0;
         rb.angularVelocity = 0;
+
+        rb.Sleep();
+
         isHeld = true;
+        rb.position = startPoint.position;
         foreach (var c in toastBones)
         {
             c.SetActive(false);

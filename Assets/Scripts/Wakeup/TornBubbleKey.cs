@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ public class TornBubbleKey : MonoBehaviour
 
     public void CorrectKey()
     {
+        this.GetComponent<Image>().raycastTarget = false;
         button.interactable = false;
         animator.Play("Pop");
         GetComponent<AudioSource>().Play();
