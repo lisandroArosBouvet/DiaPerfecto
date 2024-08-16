@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,13 +6,13 @@ public class ToastManager : MonoBehaviour, IGameManager
 {
     public SoundFX soundFxManager;
     [SerializeField] GameObject toast;
+    GameObject copyToast;
     public Transform startPoint;   // Punto de inicio
     public Transform endPoint;     // Punto final
     public float speed = 1.0f;   // Velocidad de oscilación
 
 
-    private Rigidbody2D rb;
-    public GameObject[] toastBones;
+    private Rigidbody2D[] rbs;
     private bool isHeld = false;
     private float timeToOscilian = 0;
 
@@ -41,10 +42,10 @@ public class ToastManager : MonoBehaviour, IGameManager
         if (isHeld)
         {
             timeToOscilian += Time.deltaTime;
-            rb.velocity = new Vector2(Mathf.Sin(timeToOscilian) *speed, 0);
+            foreach(var rb in rbs) rb.velocity = new Vector2(Mathf.Sin(timeToOscilian) *speed, 0);
         }else
         {
-            if (rb.velocity.magnitude < stillThreshold)
+            if (rbs[0].velocity.magnitude < stillThreshold)
             {
                 LoseGame(SituationType.SobreLaMesa);
             }
@@ -60,11 +61,10 @@ public class ToastManager : MonoBehaviour, IGameManager
     void ReleaseBall()
     {
         isHeld = false;
-        rb.gravityScale = 1;
-        foreach (var c in toastBones)
+        foreach (var rb in rbs)
         {
-            c.SetActive(true);
-            c.GetComponent<Rigidbody2D>().velocity = rb.velocity;
+            rb.gravityScale = 1;
+            rb.simulated = true;
         }
         //rb.velocity = CalculateReleaseVelocity(); // Mantener la inercia en el momento de la liberación
     }
@@ -86,9 +86,12 @@ public class ToastManager : MonoBehaviour, IGameManager
         if (_toastInMachine < toastInMachineGraphics.Length)
             toastInMachineGraphics[_toastInMachine].enabled = true;
         _toastInMachine++;
+        var miga = copyToast.transform.GetChild(4);
+        miga.parent = null;
+        miga.localScale = Vector3.one;
+        Destroy(copyToast);
         if (_toastInMachine >= toastToWin)
         {
-            rb.MovePosition(endPoint.position);
             soundFxManager.Ganaste();
             ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
         }
@@ -102,28 +105,32 @@ public class ToastManager : MonoBehaviour, IGameManager
 
     public void ResetGame()
     {
-        var anotherToast = Instantiate(toast, toast.transform.parent);
-        rb = anotherToast.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.zero;
-        rb.gravityScale = 0;
+        copyToast = Instantiate(toast, toast.transform.parent);
+
         timeToOscilian = 0;
-        rb.totalTorque = 0;
-        rb.rotation = 0;
-        rb.angularVelocity = 0;
-
-        rb.Sleep();
-
         isHeld = true;
-        rb.position = startPoint.position;
-        foreach (var c in toastBones)
+        rbs = copyToast.GetComponentsInChildren<Rigidbody2D>();
+        foreach (var rb in rbs)
         {
-            c.SetActive(false);
+            rb.gravityScale = 0;
+            rb.totalTorque = 0;
+            rb.rotation = 0;
+            rb.angularVelocity = 0;
+            rb.Sleep();
+        }
+        for (var i = 0; i < rbs.Length; i++)
+        {
+            if (i == 0)
+                rbs[i].position = startPoint.position;
+            else
+            {
+                rbs[i].simulated = false;
+            }
         }
     }
 
     public void InitalConfiguration()
     {
-        rb = toast.GetComponent<Rigidbody2D>();
         ResetGame();
         FindAnyObjectByType<DeathZone>().SetLoseGame(LoseGame);
         FindAnyObjectByType<WinZone>().SetWinGame(WinGame);
