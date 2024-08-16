@@ -22,6 +22,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
         ;
     public void InitalConfiguration()
     {
+        startLevelBtn.gameObject.SetActive(false);
         car.enabled = false;
         car.transform.position = outLevelPosition.position;
         patrols = FindObjectsByType<PatrolUnit>(FindObjectsInactive.Include,FindObjectsSortMode.None);
