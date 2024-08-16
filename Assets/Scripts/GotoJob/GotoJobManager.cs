@@ -48,7 +48,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
     }
     private void EndGame()
     {
-        Destroy(car.gameObject);
+        car.Die();
     }
 
     public void LoseGame(SituationType type)

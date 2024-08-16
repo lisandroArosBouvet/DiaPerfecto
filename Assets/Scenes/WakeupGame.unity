@@ -826,7 +826,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxClickForForce: 20
+  maxClickForForce: 50
   openStep: 50
   closeForce: 270
   maxOpenAmount: 400

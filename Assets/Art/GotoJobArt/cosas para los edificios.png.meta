@@ -316,6 +316,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_0
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 133
+        width: 76
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de97cda90a939e49a8cefc22bcaef6b
+      internalID: -614175666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 51
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc777f14031ea6d4894744080c1828e5
+      internalID: 219257519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_2
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 112
+        width: 78
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ae48b4ece3c6b498ad03746ae149bd
+      internalID: 1137171687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_3
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 56
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20b18285add0344da98055a57395f42
+      internalID: 712615357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_4
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 107
+        width: 65
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bf09b0c2122aa4eb6808ca983ca23c
+      internalID: -784114133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cosas para los edificios_5
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 97
+        width: 91
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64c3321bcdcf854a8487444dd697bda
+      internalID: 1547459719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -330,6 +456,12 @@ TextureImporter:
       Calle cruce: 4311012505080387494
       Calle recta: -5736981003548168846
       Edificio: -7204252282634788490
+      cosas para los edificios_0: -614175666
+      cosas para los edificios_1: 219257519
+      cosas para los edificios_2: 1137171687
+      cosas para los edificios_3: 712615357
+      cosas para los edificios_4: -784114133
+      cosas para los edificios_5: 1547459719
       decorado 1: 3443537903347043711
       decorado 2: 2204666202147366871
       decorado 3: 4915159486767745514

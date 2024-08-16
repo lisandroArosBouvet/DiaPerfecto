@@ -37,7 +37,7 @@ public class ExcelReaderManager : MonoBehaviour
     }
 
 
-    string pathExcels = "Excels";
+    const string PATH_EXCELS = "Excels";
 
     private int tries = 0;
     private DialogManager _dialogManager;
@@ -74,10 +74,11 @@ public class ExcelReaderManager : MonoBehaviour
     }
     private bool CheckSituation(string comparation, SituationType situationType )
     {
+        Debug.Log($"Comparation:  {comparation} - situationType: {situationType} - {comparation.ToLower() == situationType.ToString().ToLower()}");
         if (situationType == SituationType.Ninguna)
-            return true;
+            return string.IsNullOrEmpty(comparation);
         else
-            return comparation == situationType.ToString();
+            return comparation.ToLower() == situationType.ToString().ToLower();
     }
     public void ResetTries()
     {
@@ -99,7 +100,7 @@ public class ExcelReaderManager : MonoBehaviour
     private void LoadCSVFiles()
     {
         // Cargar todos los textos que están en la carpeta Resources/CSV
-        TextAsset[] csvFiles = Resources.LoadAll<TextAsset>(pathExcels);
+        TextAsset[] csvFiles = Resources.LoadAll<TextAsset>(PATH_EXCELS);
         foreach (TextAsset csvFile in csvFiles)
         {
             var rows = new List<RowDialogue>();
@@ -126,7 +127,7 @@ public class ExcelReaderManager : MonoBehaviour
                     Condition = values[1].Trim(),
                     Situation = values[2].Trim(),
                     Message = values[3].Trim(),
-                    AudioName = values.Length > 4 ? values[4].Trim() : string.Empty // Manejar casos donde AudioName puede estar vacío
+                    //AudioName = values.Length > 4 ? values[4].Trim() : string.Empty // Manejar casos donde AudioName puede estar vacío
                 };
 
                 // Añadir el RowDialogue a la lista
@@ -175,6 +176,7 @@ public enum SituationType
     ChocasteObrero,
     SobreLaMesa,
     CayoMesa,
+    Semaforo,
     SeTerminoElTiempo
 }
 
