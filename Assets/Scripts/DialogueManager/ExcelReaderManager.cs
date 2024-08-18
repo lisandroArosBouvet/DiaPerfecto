@@ -35,7 +35,13 @@ public class ExcelReaderManager : MonoBehaviour
             return _instance;
         }
     }
-
+    private void Start()
+    {
+        if(FindObjectsByType< ExcelReaderManager >(FindObjectsInactive.Include,FindObjectsSortMode.InstanceID).Length>1)
+            Destroy(gameObject);
+        else
+            DontDestroyOnLoad(gameObject);
+    }
 
     const string PATH_EXCELS = "Excels";
 
@@ -43,13 +49,20 @@ public class ExcelReaderManager : MonoBehaviour
     private DialogManager _dialogManager;
     const string STAR_NAME = "Star";
     public Dictionary<GameType, List<RowDialogue>> excels;
-    
+
+    public void EnterDialogue(GameType gameType, ConditionType condition, UnityAction callback)
+    {
+        EnterDialogue(gameType, condition, SituationType.Ninguna, callback);
+    }
     public void EnterDialogue(GameType gameType,ConditionType condition, SituationType situation, UnityAction callback)
     {
         if (_dialogManager == null)
             _dialogManager = FindAnyObjectByType<DialogManager>();
         var dialogues = excels[gameType];
         dialogues = dialogues.Where(d => d.Condition == condition.ToString() && CheckSituation(d.Situation, situation)).ToList();
+        int lastTry = dialogues.Max(d => d.Tries);
+        int findTry = tries <= lastTry ? tries : lastTry;
+        dialogues = dialogues.Where(d => d.Tries == findTry).ToList();
         List<DialogData> dialogsData = new List<DialogData>();
         foreach (var d in dialogues)
         {
@@ -66,11 +79,9 @@ public class ExcelReaderManager : MonoBehaviour
             }
         }
         dialogsData[dialogsData.Count - 1].Callback = callback;
+
         _dialogManager.Show(dialogsData);
-    }
-    public void EnterDialogue(GameType gameType, ConditionType condition, UnityAction callback)
-    {
-        EnterDialogue(gameType, condition, SituationType.Ninguna, callback);
+        ConditionChangeTries(condition);
     }
     private bool CheckSituation(string comparation, SituationType situationType )
     {
@@ -80,13 +91,12 @@ public class ExcelReaderManager : MonoBehaviour
         else
             return comparation.ToLower() == situationType.ToString().ToLower();
     }
-    public void ResetTries()
+    private void ConditionChangeTries(ConditionType condition)
     {
-        tries = 0;
-    }
-    public void AddTry()
-    {
-        tries++;
+        if (condition == ConditionType.LoseGame)
+            tries++;
+        else if (condition == ConditionType.WinGame)
+            tries = 0;
     }
 
     void Awake()
