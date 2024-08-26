@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class WakeupManager : MonoBehaviour, IGameManager
 {
     const GameType NAME_GAME = GameType.Wakeup;
-    public SoundFX soundFxManager;
     public float timeToFinishGame = 20f;
     public WatchCooldown watchCooldown;
     public string
@@ -32,6 +31,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
     public int neederBubbles = 25;
     private float _percentBlurRest = 1f;
     public TornBubbleKey bubbleKeyModel;
+    private List<TornBubbleKey> _bubbleList = new List<TornBubbleKey>();
     public RectTransform bubbleSpawnerArea;
 
     [Header("Eyelids")]
@@ -56,6 +56,7 @@ public class WakeupManager : MonoBehaviour, IGameManager
 
     private void Start()
     {
+        AudioManager.Instance.PlayGameMusic();
         bubbleKeyModel.gameObject.SetActive(false);
         InitalConfiguration();
     }
@@ -113,13 +114,15 @@ public class WakeupManager : MonoBehaviour, IGameManager
 
             _currentUpperPosY += maxOpenAmount;
             _currentLowerPosY -= maxOpenAmount;
+            foreach (var bubble in _bubbleList) bubble.Activate(true);
         });
 
         for (int i = 0; i < neederBubbles; i++)
         {
             var bubble = Instantiate(bubbleKeyModel, bubbleKeyModel.transform.parent);
             bubble.gameObject.SetActive(true);
-
+            _bubbleList.Add(bubble);
+            bubble.Activate(false);
             Vector2 randomPosition = GetRandomPositionInImage();
             bubble.GetComponent<RectTransform>().anchoredPosition = randomPosition;
         }
@@ -141,8 +144,8 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void PressKey()
     {
-        soundFxManager.SetPitch(_currentPitch);
-        soundFxManager.Burbuja();
+        AudioManager.Instance.SetPitch(_currentPitch);
+        AudioManager.Instance.Burbuja();
         _currentPitch += _addPitch;
         neederBubbles--;
         if (neederBubbles <= 0)
@@ -151,7 +154,8 @@ public class WakeupManager : MonoBehaviour, IGameManager
     }
     public void LoseGame(SituationType type)
     {
-        soundFxManager.Fail();
+        AudioManager.Instance.SetPitch(1);
+        AudioManager.Instance.Fail();
         watchCooldown.StopWatch();
         _startGame = false;
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame, type, () => SceneManager.LoadScene(LOSE_SCENE));
@@ -164,10 +168,11 @@ public class WakeupManager : MonoBehaviour, IGameManager
         lowerEyelid.GetComponent<Image>().enabled = false;
         Invoke("WinGame",1.5f);
         watchCooldown.StopWatch();
-        soundFxManager.Ganaste();
+        AudioManager.Instance.Ganaste();
     }
     public void WinGame()
     {
+        AudioManager.Instance.SetPitch(1);
         watchCooldown.StopWatch();
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
     }

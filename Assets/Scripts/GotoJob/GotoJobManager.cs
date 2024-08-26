@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GotoJobManager : MonoBehaviour, IGameManager
 {
-    public SoundFX soundFxManager;
     public Car car;
     public WatchCooldown watchCooldown;
     public Transform outLevelPosition; 
@@ -53,7 +52,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
 
     public void LoseGame(SituationType type)
     {
-        soundFxManager.Fail();
+        AudioManager.Instance.Fail();
         watchCooldown.StopWatch();
         EndGame();
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME,ConditionType.LoseGame, type, ()=> SceneManager.LoadScene(LOSE_SCENE));
@@ -61,7 +60,7 @@ public class GotoJobManager : MonoBehaviour, IGameManager
 
     public void WinGame()
     {
-        soundFxManager.Ganaste();
+        AudioManager.Instance.Ganaste();
         watchCooldown.StopWatch();
         EndGame();
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));

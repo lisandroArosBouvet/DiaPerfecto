@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      semaforo3_0: 492156086028802863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

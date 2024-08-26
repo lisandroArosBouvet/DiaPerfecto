@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      personitas y cartel_0: 7650920133297587873
+      personitas y cartel_1: -7181240469637489739
+      personitas y cartel_2: 820270143417393983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

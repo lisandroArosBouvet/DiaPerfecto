@@ -6,7 +6,6 @@ using System.Linq;
 using Doublsb.Dialog;
 using System;
 using UnityEngine.Events;
-using UnityEngine.AI;
 
 public class ExcelReaderManager : MonoBehaviour
 {
@@ -130,6 +129,10 @@ public class ExcelReaderManager : MonoBehaviour
                 // Dividir la línea en campos
                 string[] values = line.Split(',');
 
+                Debug.Log($"Tries: {int.Parse(values[0].Trim())}");
+                Debug.Log($"Condition: {values[1].Trim()}");
+                Debug.Log($"Situation: {values[2].Trim()}");
+                Debug.Log($"Message: {values[3].Trim()}");
                 // Crear un nuevo objeto RowDialogue y asignar sus propiedades
                 var rowDialogue = new RowDialogue
                 {

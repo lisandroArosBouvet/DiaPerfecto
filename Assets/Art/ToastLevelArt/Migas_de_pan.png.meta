@@ -263,7 +263,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Migas_de_pan_0: -2343691814400391972
+      Migas_de_pan_1: 994476378340064090
+      Migas_de_pan_2: -8124642977756406876
+      Migas_de_pan_3: 453902903501552001
+      Migas_de_pan_4: 5502580085134846749
+      Migas_de_pan_5: -2357108790277492535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

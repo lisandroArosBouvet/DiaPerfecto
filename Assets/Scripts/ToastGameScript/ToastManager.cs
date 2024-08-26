@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class ToastManager : MonoBehaviour, IGameManager
 {
-    public SoundFX soundFxManager;
     [SerializeField] GameObject toast;
     GameObject copyToast;
     public Transform startPoint;   // Punto de inicio
@@ -71,7 +70,7 @@ public class ToastManager : MonoBehaviour, IGameManager
 
     public void LoseGame(SituationType loseType)
     {
-        soundFxManager.Fail();
+        AudioManager.Instance.Fail();
         if (_startGame == false) return;
         _startGame = false;
         ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.LoseGame,loseType, () => SceneManager.LoadScene(LOSE_SCENE));
@@ -92,13 +91,13 @@ public class ToastManager : MonoBehaviour, IGameManager
         Destroy(copyToast);
         if (_toastInMachine >= toastToWin)
         {
-            soundFxManager.Ganaste();
+            AudioManager.Instance.Ganaste();
             ExcelReaderManager.Instance.EnterDialogue(NAME_GAME, ConditionType.WinGame, () => SceneManager.LoadScene(NEXT_SCENE));
         }
         else
         {
             ResetGame();
-            soundFxManager.Tostadora();
+            AudioManager.Instance.Tostadora();
             _startGame = true;
         }
     }
